@@ -3,28 +3,116 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>i-Inspire • Workshops, Speaking & Britannia Rumba</title>
-  <meta name="description" content="i-Inspire delivers motivational speaking, youth workshops, and Britannia Rumba performances. Book talks, school programs, and cultural events." />
+  <title>i‑Inspire • Workshops, Speaking & Britannia Rumba</title>
+  <meta name="description" content="Motivational speaking, youth workshops, and Britannia Rumba performances. Book talks, school programs, and cultural events." />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="i-Inspire • Workshops, Speaking & Britannia Rumba" />
-  <meta property="og:description" content="Motivational speaking, youth workshops, and Britannia Rumba performances." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.i-inspire.co.uk/" />
-  <!-- <meta property="og:image" content="https://www.i-inspire.co.uk/og-image.jpg" /> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Favicon (optional) -->
-  <!-- <link rel="icon" href="/favicon.ico" /> -->
+  <style>
+    :root{
+      --bg: #ffffff;
+      --ink: #0b1324;            /* deep slate */
+      --muted: #64748b;          /* slate-500 */
+      --line: #e6eef1;           /* subtle line */
+      --brand: #0b7a53;          /* emerald 700 */
+      --brand-2: #12b981;        /* emerald 500 */
+      --brand-3: #dcfce7;        /* emerald 50 */
+      --shadow: 0 10px 30px rgba(0,0,0,.06);
+      --radius-xl: 20px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,'Noto Sans',sans-serif;color:var(--ink);background:var(--bg);line-height:1.65}
+    img{max-width:100%;height:auto;display:block}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
 
-  <link rel="stylesheet" href="style.css" />
+    /* Layout */
+    .container{max-width:1140px;margin:0 auto;padding:0 20px}
+    .section{padding:80px 0;border-top:1px solid var(--line)}
+    .section:first-of-type{border-top:none}
+    .section.alt{background:linear-gradient(180deg,#fafefe, #fff)}
+
+    /* Typography */
+    .h1{font-size:clamp(34px,5vw,56px);line-height:1.1;margin:0 0 12px;font-weight:700}
+    .h2{font-size:clamp(26px,3.6vw,36px);line-height:1.18;margin:0 0 10px;font-weight:700}
+    .h3{font-size:22px;margin:6px 0;font-weight:600}
+    .h4{font-size:18px;margin:6px 0;font-weight:600}
+    .lead{font-size:18px;color:var(--muted);max-width:62ch}
+    .copy{max-width:72ch}
+    .muted{color:var(--muted)}
+    .eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:12px;color:var(--muted)}
+
+    /* Grid */
+    .grid-2{display:grid;gap:32px;grid-template-columns:1fr}
+    .grid-3{display:grid;gap:20px;grid-template-columns:1fr}
+    @media (min-width:920px){
+      .grid-2{grid-template-columns:1fr 1fr}
+      .grid-3{grid-template-columns:repeat(3,1fr)}
+    }
+
+    /* Cards & Buttons */
+    .card{border:1px solid var(--line);border-radius:var(--radius-xl);padding:22px;background:#fff;box-shadow:var(--shadow)}
+    .card.center{text-align:center}
+    .button{display:inline-block;border:1px solid #c5e9dd;background:#fff;padding:12px 18px;border-radius:16px;font-weight:600}
+    .button:hover{box-shadow:0 8px 24px rgba(0,0,0,.08);text-decoration:none}
+    .button.primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:white;border-color:transparent}
+    .button.ghost{background:transparent;border-color:#d8eae4}
+
+    /* Header */
+    .site-header{position:sticky;top:0;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--line);z-index:50}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .badge{width:38px;height:38px;border-radius:14px;border:1px solid var(--line);display:grid;place-items:center;font-weight:800;background:linear-gradient(135deg,#f0fff7,#fff)}
+    .brand-text{font-weight:800;letter-spacing:.1px;color:#0a192f}
+    .nav{display:flex;gap:18px;align-items:center}
+    .nav a{font-size:14px;color:#0a192f}
+    .nav .button{font-size:14px}
+
+    /* Hero */
+    .hero{padding-top:88px;background:radial-gradient(1200px 500px at 80% -20%, #ecfdf5, transparent 60%)}
+    .hero .stamp{display:inline-flex;align-items:center;gap:8px;background:var(--brand-3);border:1px solid #c6f1d6;color:var(--brand);border-radius:999px;padding:6px 10px;font-weight:600;font-size:12px}
+
+    /* Lists */
+    .list{padding-left:18px}
+    .list li{margin-bottom:8px}
+    .list.small li{font-size:14px;color:var(--muted)}
+
+    /* Footer */
+    .site-footer{border-top:1px solid var(--line);padding:28px 0;background:#fff}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+    /* Fancy book cover */
+    .book-wrap{display:grid;grid-template-columns:120px 1fr;gap:18px;align-items:center}
+    .book-cover{border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow)}
+
+    /* Subtle animations */
+    .fade-up{opacity:0;transform:translateY(12px);animation:fadeUp .6s ease forwards}
+    .fade-up.delay{animation-delay:.18s}
+    @keyframes fadeUp{to{opacity:1;transform:none}}
+
+    /* Mobile nav */
+    .hamburger{display:none}
+    @media (max-width:820px){
+      .nav{display:none}
+      .hamburger{display:inline-flex}
+      .drawer{position:fixed;inset:0;background:rgba(0,0,0,.32);backdrop-filter:blur(2px);display:none}
+      .drawer.open{display:block}
+      .drawer-panel{position:absolute;right:0;top:0;height:100%;width:min(86%,360px);background:#fff;border-left:1px solid var(--line);padding:18px;display:flex;flex-direction:column;gap:12px}
+      .drawer a{padding:10px 8px;border-radius:10px}
+      .drawer a:hover{background:#f6fbf9;text-decoration:none}
+    }
+  </style>
 </head>
 <body>
   <!-- Header / Nav -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="#home" class="brand" aria-label="i-Inspire home">
+      <a href="#home" class="brand" aria-label="i‑Inspire home">
         <span class="badge">i•I</span>
-        <span class="brand-text">i-Inspire</span>
+        <span class="brand-text">i‑Inspire</span>
       </a>
 
       <nav class="nav" aria-label="Primary">
@@ -33,8 +121,21 @@
         <a href="#workshops">Workshops & Speaking</a>
         <a href="#rumba">Britannia Rumba</a>
         <a href="#press">Press</a>
-        <a href="#contact" class="button button-outline">Contact</a>
+        <a href="#contact" class="button ghost">Contact</a>
       </nav>
+
+      <button class="hamburger button ghost" aria-label="Open menu" onclick="toggleDrawer()">Menu</button>
+    </div>
+
+    <div class="drawer" id="drawer" onclick="toggleDrawer()" aria-hidden="true">
+      <div class="drawer-panel" onclick="event.stopPropagation()">
+        <a href="#home" onclick="toggleDrawer()">Home</a>
+        <a href="#about" onclick="toggleDrawer()">About</a>
+        <a href="#workshops" onclick="toggleDrawer()">Workshops & Speaking</a>
+        <a href="#rumba" onclick="toggleDrawer()">Britannia Rumba</a>
+        <a href="#press" onclick="toggleDrawer()">Press</a>
+        <a href="#contact" class="button" onclick="toggleDrawer()">Contact</a>
+      </div>
     </div>
   </header>
 
@@ -42,19 +143,20 @@
     <!-- Hero -->
     <section id="home" class="section hero">
       <div class="container grid-2">
-        <div>
+        <div class="fade-up">
+          <span class="stamp">Purpose • Resilience • Culture</span>
           <h1 class="h1">Inspire minds. <span class="muted">Elevate futures.</span></h1>
           <p class="lead">
-            i-Inspire delivers motivational speaking, youth workshops, and music-driven cultural events.
+            i‑Inspire delivers motivational speaking, youth workshops, and music‑driven cultural events.
             Founded by Blanchard Jean Azip, creator of <em>Britannia Rumba</em> and author of
             <em>The Clock Behind My Mind</em>.
           </p>
-          <div class="actions">
-            <a href="#workshops" class="button">Book a Workshop</a>
-            <a href="https://amzn.eu/d/dhxJfy7" target="_blank" rel="noopener" class="button button-outline">Get the Book</a>
+          <div class="actions" style="margin-top:16px">
+            <a href="#workshops" class="button primary">Book a Workshop</a>
+            <a href="https://amzn.eu/d/dhxJfy7" target="_blank" rel="noopener" class="button ghost">Get the Book</a>
           </div>
         </div>
-        <div>
+        <div class="fade-up delay">
           <div class="card center">
             <div class="eyebrow">Featured</div>
             <div class="h3">Britannia Rumba • Live</div>
@@ -65,92 +167,72 @@
     </section>
 
     <!-- About -->
-    <section id="about" class="section">
+    <section id="about" class="section alt">
       <div class="container">
-        <h2 class="h2">About i-Inspire</h2>
+        <h2 class="h2">About i‑Inspire</h2>
         <p class="copy">
-          i-Inspire is a platform for transformation through story, structure, and sound.
+          i‑Inspire is a platform for transformation through story, structure, and sound.
           We partner with schools, community groups, and organisations to deliver practical tools for confidence,
           purpose, and resilience — blending motivational speaking with interactive activities and music.
         </p>
 
-        <div class="grid-3">
-          <div class="card">
-            <div class="eyebrow">Pillar</div>
-            <div class="h4">Motivation</div>
-            <p class="muted">Keynotes that connect lived experience to actionable growth.</p>
-          </div>
-          <div class="card">
-            <div class="eyebrow">Pillar</div>
-            <div class="h4">Skills</div>
-            <p class="muted">Hands-on workshops in mindset, goal-setting, and communication.</p>
-          </div>
-          <div class="card">
-            <div class="eyebrow">Pillar</div>
-            <div class="h4">Culture</div>
-            <p class="muted">Britannia Rumba performances bringing community and joy.</p>
-          </div>
+        <div class="grid-3" style="margin-top:22px">
+          <div class="card"><div class="eyebrow">Pillar</div><div class="h4">Motivation</div><p class="muted">Keynotes that connect lived experience to actionable growth.</p></div>
+          <div class="card"><div class="eyebrow">Pillar</div><div class="h4">Skills</div><p class="muted">Hands‑on workshops in mindset, goal‑setting, and communication.</p></div>
+          <div class="card"><div class="eyebrow">Pillar</div><div class="h4">Culture</div><p class="muted">Britannia Rumba performances bringing community and joy.</p></div>
         </div>
       </div>
     </section>
 
     <!-- Workshops & Speaking -->
-    <section id="workshops" class="section alt">
+    <section id="workshops" class="section">
       <div class="container grid-2">
         <div>
           <h2 class="h2">Workshops & Speaking</h2>
           <p class="copy">
             Book Blanchard for school assemblies, youth programmes, community events, or corporate inspiration.
-            Sessions blend story with structured exercises: visualisation, values mapping, and micro-habits for progress.
+            Sessions blend story with structured exercises: visualisation, values mapping, and micro‑habits for progress.
           </p>
           <ul class="list">
             <li>Keynotes: Resilience, Purpose, and Action</li>
             <li>Youth Workshops: Confidence, Communication, Career Readiness</li>
-            <li>Educator/Leader Training: Culture-building & engagement</li>
+            <li>Educator/Leader Training: Culture‑building & engagement</li>
           </ul>
           <div class="actions">
-            <a class="button"
-               href="mailto:hello@i-inspire.co.uk?subject=Workshop%20or%20Speaking%20Enquiry&body=Hi%20i-Inspire%2C%0A%0AWe%27d%20like%20to%20book%20a%20session%20for%20...%0A%0ADate(s):%0ALocation:%0AAudience:%0AHeadcount:%0AGoals:%0A%0AThanks!">
-              Email to Book
-            </a>
-            <a class="button button-outline" target="_blank" rel="noopener" href="https://amzn.eu/d/dhxJfy7">Read Book Synopsis</a>
+            <a class="button primary" href="mailto:hello@i-inspire.co.uk?subject=Workshop%20or%20Speaking%20Enquiry&body=Hi%20i-Inspire%2C%0A%0AWe%27d%20like%20to%20book%20a%20session%20for%20...%0A%0ADate(s):%0ALocation:%0AAudience:%0AHeadcount:%0AGoals:%0A%0AThanks!">Email to Book</a>
+            <a class="button ghost" target="_blank" rel="noopener" href="https://amzn.eu/d/dhxJfy7">Read Book Synopsis</a>
           </div>
         </div>
         <div>
-          <div class="card">
-            <div class="h4">Fast booking info</div>
-            <ul class="list small">
-              <li>Typical length: 45–60 min keynote or half-day workshops</li>
-              <li>Audience: KS3–KS5, FE/HE, staff INSET, community & corporate</li>
-              <li>Tech: Handheld/lapel mic, projector/HDMI, speakers</li>
-              <li>Travel from: Switzerland/UK (flexible)</li>
-            </ul>
+          <div class="card book-wrap">
+            <img class="book-cover" src="/images/book-cover.jpg" alt="The Clock Behind My Mind — book cover" />
+            <div>
+              <div class="h4">The Clock Behind My Mind</div>
+              <p class="muted small">From the shadows of war to the light of purpose. Now available on Amazon.</p>
+              <a class="button" target="_blank" rel="noopener" href="https://amzn.eu/d/dhxJfy7">Buy on Amazon</a>
+            </div>
           </div>
+          <p class="muted small" style="margin-top:10px">Replace <code>/images/book-cover.jpg</code> with your real image path in the repository.</p>
         </div>
       </div>
     </section>
 
     <!-- Britannia Rumba -->
-    <section id="rumba" class="section">
+    <section id="rumba" class="section alt">
       <div class="container grid-2">
         <div>
           <h2 class="h2">Britannia Rumba — Band Bookings</h2>
-          <p class="copy">
-            High-energy Congolese rumba with a UK heartbeat. Perfect for festivals, schools, and community events.
-          </p>
+          <p class="copy">High‑energy Congolese rumba with a UK heartbeat. Perfect for festivals, schools, and community events.</p>
           <ul class="list">
             <li>Sets: 30–90 minutes • Live band</li>
             <li>Workshops available: rhythm, movement, culture</li>
             <li>Technical: PA provided on request</li>
           </ul>
-          <a class="button"
-             href="mailto:hello@i-inspire.co.uk?subject=Britannia%20Rumba%20Booking&body=Hi%20i-Inspire%2C%0A%0AWe%27d%20like%20to%20book%20Britannia%20Rumba.%0A%0AEvent:%0ADate:%0ALocation:%0ABudget:%0ATech%20notes:%0A%0AThanks!">
-            Request a Performance
-          </a>
+          <a class="button primary" href="mailto:hello@i-inspire.co.uk?subject=Britannia%20Rumba%20Booking&body=Hi%20i-Inspire%2C%0A%0AWe%27d%20like%20to%20book%20Britannia%20Rumba.%0A%0AEvent:%0ADate:%0ALocation:%0ABudget:%0ATech%20notes:%0A%0AThanks!">Request a Performance</a>
         </div>
         <div>
           <div class="card center">
-            <div class="h4">Bring the joy.</div>
+            <div class="h3">Bring the joy.</div>
             <p class="muted">We love community. We love rhythm. Let’s make it a celebration.</p>
           </div>
         </div>
@@ -158,27 +240,25 @@
     </section>
 
     <!-- Press -->
-    <section id="press" class="section alt">
+    <section id="press" class="section">
       <div class="container grid-2">
         <div>
           <h2 class="h2">Press & Media</h2>
-          <p class="copy">
-            Covering <em>The Clock Behind My Mind</em>, i-Inspire workshops, or Britannia Rumba? Here are fast angles.
-          </p>
+          <p class="copy">Covering <em>The Clock Behind My Mind</em>, i‑Inspire workshops, or Britannia Rumba? Here are fast angles.</p>
           <ul class="list">
             <li>Memoir: refugee to purpose — resilience, education, community</li>
             <li>Outreach: youth workshops, school assemblies, cultural engagement</li>
             <li>Music: Britannia Rumba — Congolese roots, UK energy</li>
           </ul>
           <div class="actions">
-            <a class="button button-outline" target="_blank" rel="noopener" href="https://amzn.eu/d/dhxJfy7">View on Amazon</a>
-            <a class="button" href="mailto:hello@i-inspire.co.uk?subject=Press%20Enquiry%20—%20i-Inspire">Email Press</a>
+            <a class="button ghost" target="_blank" rel="noopener" href="https://amzn.eu/d/dhxJfy7">View on Amazon</a>
+            <a class="button primary" href="mailto:hello@i-inspire.co.uk?subject=Press%20Enquiry%20—%20i‑Inspire">Email Press</a>
           </div>
         </div>
         <div>
           <div class="card">
             <div class="eyebrow">Press Contact</div>
-            <div class="h4">hello@i-inspire.co.uk</div>
+            <div class="h4">hello@i‑inspire.co.uk</div>
             <p class="muted">Interview requests, images, and event details available on request.</p>
           </div>
         </div>
@@ -186,34 +266,33 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="section">
+    <section id="contact" class="section alt">
       <div class="container grid-2">
         <div>
           <h2 class="h2">Contact</h2>
           <p class="copy">For general enquiries, partnerships, or appearances, email us directly.</p>
-          <a class="button" href="mailto:hello@i-inspire.co.uk?subject=Enquiry%20from%20Website">hello@i-inspire.co.uk</a>
+          <a class="button primary" href="mailto:hello@i-inspire.co.uk?subject=Enquiry%20from%20Website">hello@i‑inspire.co.uk</a>
         </div>
         <div>
           <div class="card">
             <div class="eyebrow">Follow</div>
-            <div class="links">
-              <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+            <div class="links" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:8px">
+              <a href="https://www.linkedin.com/in/blanchard-jean-azip-acca-130bb653/" target="_blank" rel="noopener">LinkedIn</a>
               <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
               <a href="https://youtube.com" target="_blank" rel="noopener">YouTube</a>
             </div>
-            <p class="muted small">Replace the links above with your real profiles anytime.</p>
+            <p class="muted small" style="margin-top:8px">Replace Instagram/YouTube with your real profiles when ready.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Privacy -->
-    <section id="privacy" class="section alt">
+    <section id="privacy" class="section">
       <div class="container">
         <h2 class="h2">Privacy</h2>
-        <p class="copy">
-          We use your details solely to respond to your enquiry and manage bookings. We do not sell your data.
-          For data requests or removal, email <a href="mailto:hello@i-inspire.co.uk">hello@i-inspire.co.uk</a>.
+        <p class="copy">We use your details solely to respond to your enquiry and manage bookings. We do not sell your data.
+          For data requests or removal, email <a href="mailto:hello@i-inspire.co.uk">hello@i‑inspire.co.uk</a>.
         </p>
       </div>
     </section>
@@ -222,16 +301,19 @@
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div class="muted small">© <span id="year"></span> i-Inspire. All rights reserved.</div>
-      <div class="muted small">
-        Built for clarity. <a href="#privacy">Privacy</a>
-      </div>
+      <div class="muted small">© <span id="year"></span> i‑Inspire. All rights reserved.</div>
+      <div class="muted small">Built for clarity. <a href="#privacy">Privacy</a></div>
     </div>
   </footer>
 
   <script>
     // Set current year
     document.getElementById('year').textContent = new Date().getFullYear();
+    // Mobile drawer
+    function toggleDrawer(){
+      const d = document.getElementById('drawer');
+      d.classList.toggle('open');
+    }
   </script>
 </body>
 </html>
