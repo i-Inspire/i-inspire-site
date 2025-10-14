@@ -165,7 +165,7 @@
   document.getElementById('yr').textContent = new Date().getFullYear();
   document.getElementById('send').addEventListener('click', function(){
     const v = id => document.getElementById(id).value || '';
-    const email = 'deplaizir@icloud.com'; // swap to hello@i-inspire.co.uk once ready
+    const email = 'hello@i-inspire.co.uk'; // 
     const subject = encodeURIComponent('i_Inspire booking: ' + v('type'));
     const body = encodeURIComponent(
       'Name: ' + v('name') + '\\n' +
